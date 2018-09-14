@@ -22,11 +22,11 @@
               
             } while(nextElement.length == 0 && bufferCount > 0 )
 
-						 return nextElement
+			return nextElement
         };
         
         var getSelector = function(index){
-        		return '['+settings.attribute+'="'+index+'"]:first';
+        	return '['+settings.attribute+'="'+index+'"]:first:visible';
         }
     	
       	$(this).on('keydown', selector, function(e) { 
@@ -34,7 +34,7 @@
               var sourceElem = e.target || this;
 
               if (keyCode == 9) { 
-                	var tabOrderIndexCur = $(sourceElem).attr(settings.attribute);
+                  var tabOrderIndexCur = $(sourceElem).attr(settings.attribute);
                   tabOrderIndexCur     = parseInt(tabOrderIndexCur,10);
                   var tabOrderIndexNext =  tabOrderIndexCur + 1;
                   var nextElem          = getNextElement(tabOrderIndexNext);
